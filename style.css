@@ -1,0 +1,219 @@
+:root {
+    --dark: #0f172a;
+    --card-bg: #1e293b;
+    --primary: #3b82f6;
+    --success: #10b981;
+    --danger: #ef4444;
+    --text: #f8fafc;
+    --text-dim: #94a3b8;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text);
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    background-color: #1e293b;
+    padding: 2rem 0 8rem;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 300;
+}
+
+header h1 span {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+
+#balance {
+    margin-top: -5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: start; /* Garante que comecem na mesma linha */
+}
+
+
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+    border: 1px solid #334155;
+
+}
+
+
+.card h3, .card-total h3 {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.card p {
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+
+.card-total {
+  background:var(--primary) ;
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  border:1px solid var(--primary) ;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color: var(--text-dim);
+}
+
+th {
+    background: var(--card-bg);
+    text-align: left;
+    padding: 1rem 2rem;
+    font-weight: normal;
+}
+
+td {
+    background: var(--card-bg);
+    padding: 1rem 2rem;
+    color: var(--text);
+}
+
+td.description {
+    color: var(--text);
+}
+
+td.income {
+    color: var(--success);
+}
+
+td.expense {
+    color: var(--danger);
+}
+
+.button-new {
+    display: inline-block;
+    background: none;
+    color: var(--success);
+    border: 2px solid var(--success);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.button-new:hover {
+    background: var(--success);
+    color: white;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+
+}
+
+.modal {
+    background: var(--card-bg);
+    padding: 2.4rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    background: var(--dark);
+    color: white;
+    margin-bottom: 0.8rem;
+}
+
+.table-container {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    background: var(--primary);
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    #balance {
+        grid-template-columns: 1fr;
+    }
+}
+
+.button.cancelar {
+    color: var(--dark);
+    background: var(--white);
+    border: 1px solid var(--dark);
+    opacity: 0.6;
+   
+}
+
+.button.cancelar:hover {
+    opacity: 1;
+}
